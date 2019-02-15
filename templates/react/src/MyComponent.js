@@ -8,7 +8,7 @@ export class MyComponent extends React.Component {
     render() {
         return (
             <div className='container'>
-                <h1 className='heading' style={ { color: 'blue' } }>{ this.props.message }</h1>
+                <h1 className='heading'>{ this.props.message }</h1>
             </div>
         );
     }

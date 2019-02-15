@@ -22,7 +22,7 @@ module.exports = {
                 use: [ 'babel-loader' ]
             },
             {
-                test: /\.scss$/,
+                test: /\.s?css$/,
                 use: [ 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ]
             }
         ]
@@ -37,8 +37,8 @@ module.exports = {
     // development server configuration
     devServer: {
         
-        // do not open browser on server start (annoying)
-        open: false,
+        // open browser on server start (but annoying)
+        open: true,
     },
 
 };

@@ -2,7 +2,12 @@ const path = require( 'path' );
 const webpack = require( 'webpack' );
 const HTMLWebpackPlugin = require( 'html-webpack-plugin' );
 const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const _ = require( 'lodash' );
+const packageJSON = require( './package.json' );
+
+// should include css in JavaScript bundle
+const inlineCss = packageJSON.config.inlineCss;
 
 /*-------------------------------------------------*/
 
@@ -34,16 +39,22 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ]
+                use: [ ( inlineCss ? 'style-loader' : MiniCssExtractPlugin.loader ), 'css-loader', 'postcss-loader', 'sass-loader' ]
             }
         ]
     },
 
     plugins: [
         new PeerDepsExternalsPlugin(),
-    ],
+
+        // inline or extract css
+        inlineCss ? null : new MiniCssExtractPlugin( {
+            filename: 'styles.css'
+        } )
+    ].filter( Boolean ),
 
     // development server configuration
+    // no need of dev-server, as we are running `webpack` in watch mode
     /* devServer: {
 
         // write file to disk in watch mode
