@@ -1,0 +1,38 @@
+{
+  "name": "quick-library",
+  "version": "1.0.0",
+  "description": "A CLI tool to generate React, Angular, Vue library (React for now)",
+  "main": "index.js",
+  "bin": "index.js",
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatisuday/quick-library.git"
+  },
+  "keywords": [
+    "cli",
+    "library",
+    "react",
+    "angular",
+    "vue"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatisuday/quick-library/issues"
+  },
+  "homepage": "https://github.com/thatisuday/quick-library#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "check-node-version": "^3.2.0",
+    "commander": "^2.19.0",
+    "fs-extra": "^7.0.1",
+    "inquirer": "^6.2.2",
+    "json-templater": "^1.2.0",
+    "lodash": "^4.17.11",
+    "ora": "^3.1.0"
+  }
+}
