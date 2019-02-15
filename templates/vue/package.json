@@ -1,0 +1,23 @@
+{
+  "name": "test-library",
+  "description": "{{libraryDesc}}",
+  "version": "1.0.0",
+  "main": "./dist/build.js",
+  "module": "./dist/build.es.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://{{gitHost}}.com/{{gitUsername}}/{{gitRepo}}.git"
+  },
+  "keywords": [
+    "{{libraryTemplate}}"
+  ],
+  "author": "{{gitUsername}}",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://{{gitHost}}.com/{{gitUsername}}/{{gitRepo}}/issues"
+  },
+  "homepage": "https://{{gitHost}}.com/{{gitUsername}}/{{gitRepo}}#readme",
+  "devDependencies": {},
+  "peerDependencies": {}
+}

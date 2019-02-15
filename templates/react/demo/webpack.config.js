@@ -1,28 +1,17 @@
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 const HTMLWebpackPlugin = require( 'html-webpack-plugin' );
-const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 const _ = require( 'lodash' );
 
 /*-------------------------------------------------*/
 
 module.exports = {
 
-    // watch for changes and build
-    watch: true,
-
     // webpack optimization mode
-    mode: 'production',
+    mode: 'development',
 
     // entry file(s)
-    entry: './src/index.js',
-
-    // output file(s) and chunks
-    output: {
-        libraryTarget: 'umd',
-        path: path.resolve( __dirname, 'dist' ),
-        filename: 'index.js'
-    },
+    entry: path.resolve( __dirname, 'index.js' ),
 
     // module/loaders configuration
     module: {
@@ -40,17 +29,16 @@ module.exports = {
     },
 
     plugins: [
-        new PeerDepsExternalsPlugin(),
+        new HTMLWebpackPlugin( {
+            template: path.resolve( __dirname, 'index.html' )
+        } )
     ],
 
     // development server configuration
-    /* devServer: {
-
-        // write file to disk in watch mode
-        writeToDisk: true
-    }, */
-
-    // generate source map
-    devtool: 'source-map'
+    devServer: {
+        
+        // do not open browser on server start (annoying)
+        open: false,
+    },
 
 };
