@@ -5,7 +5,7 @@ A CLI tool to generate React, Angular and Vue library and publish it on npm.
 [![npm](https://img.shields.io/npm/v/quick-library.svg?style=flat-square)](https://www.npmjs.com/package/quick-library)
 [![David](https://img.shields.io/david/thatisuday/quick-library.svg?style=flat-square)](https://www.npmjs.com/package/quick-library)
 
-![preview](https://i.imgur.com/duHFFsI.gif)
+![preview](https://i.imgur.com/TdsszOU.gif)
 
 > Right now, this tool only supports creation of React library. I am working on others.
 
