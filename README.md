@@ -94,10 +94,10 @@ npm install --save library-name
 
 You should only import named components like for example, in React library, a component can be imported like
 
-```js
+```jsx
 import { MyComponent } from 'library-name'; 
 
-<MyComponent prop={} />
+const App = (props) => <MyComponent message={props.message} />;
 ```
 
 If you have opted for **Include CSS in JavaScript bundle** command line option while creating the library, then library users don't have to worry about importing css separately. But if you had extracted css to different file, then library users must include css either by importing in their JavaScript like `import 'library-name/styles.css';` or in their sass like `@import '~library-name/styles.css';`
