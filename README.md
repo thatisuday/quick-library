@@ -1,7 +1,7 @@
 # Quick Library
 A CLI tool to generate React, Angular and Vue library and publish it on npm.
 
-![](https://i.imgur.com/duHFFsI.gif)
+![preview](https://i.imgur.com/duHFFsI.gif)
 
 > Right now, this tool only supports creation of React library. I am working on others.
 
@@ -57,7 +57,7 @@ $ npm publish				‣ publish library
 Once you enter the library directory, you have following files to work with
 
 ```
-../../new-react-lib
+new-react-lib
 ├── babel.config.js
 ├── demo
 |  ├── index.html
@@ -80,6 +80,23 @@ Open terminal window and use command `npm run start` start webpack build which w
 
 ## Publish your library
 Once you are done with your development, `dist` directory contains your release ready library files. You can use `npm publish` command to publish your library to `npm` official registry.
+
+## Using your library
+Once you publish your library, people can install your library using below command
+
+```bash
+npm install --save library-name
+```
+
+You should only import named components like for example, in React library, a component can be imported like
+
+```js
+import { MyComponent } from 'library-name'; 
+
+<MyComponent prop={} />
+```
+
+If you have opted for **Include CSS in JavaScript bundle** command line option while creating the library, then library users don't have to worry about importing css separately. But if you had extracted css to different file, then library users must include css either by importing in their JavaScript like `import 'library-name/styles.css';` or in their sass like `@import '~library-name/styles.css';`
 
 ***
 
